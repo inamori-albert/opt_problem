@@ -1,0 +1,49 @@
+<document>
+    <category>lp</category>
+    <solver>CPLEX</solver>
+    <inputMethod>AMPL</inputMethod>
+    <email> inaty0610@gmail.com</email>
+    <model><![CDATA[
+reset;
+
+param Rth;
+
+var Rnum1 integer >= 0;
+var Rnum2 integer >= 0;
+var Rnum3 integer >= 0;
+var Rnum4 integer >= 0;
+var Rnum5 integer >= 0;
+var Rnum6 integer >= 0;
+var Rnum7 integer >= 0;
+
+param Rval1 = 1;
+param Rval2 = 10;
+param Rval3 = 100;
+param Rval4 = 1000; #1kOhm
+param Rval5 = 10000; #10kOhm
+param Rval6 = 100000; #100kOhm
+param Rval7 = 1000000; #1mOhm
+
+minimize numResistors:
+	Rnum1 + Rnum2 + Rnum3 + Rnum4 + Rnum5 + Rnum6 + Rnum7;
+
+subject to thevenin:
+	Rval1*Rnum1 + Rval2*Rnum2 + Rval3*Rnum3 + Rval3*Rnum3 + Rval4*Rnum4 + Rval5*Rnum5 + Rval6*Rnum6 + Rval7*Rnum7 = Rth; 
+
+    ]]></model>
+
+    <data><![CDATA[
+	param Rth = 1234567;
+    ]]></data>
+
+    <commands><![CDATA[
+	solve;
+	display numResistors;
+	display Rth;
+	display Rnum1,Rnum2,Rnum3,Rnum4,Rnum5,Rnum6,Rnum7;
+    ]]></commands>
+
+    <comments><![CDATA[
+    ]]></comments>
+
+    </document>
