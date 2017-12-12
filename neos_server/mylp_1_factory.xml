@@ -1,0 +1,36 @@
+<factory>
+<exampleName>Factory</exampleName>
+<category>lp</category>
+<solver>CPLEX</solver>
+<inputMethod>AMPL</inputMethod>
+<email> inaty0610@gmail.com</email>
+<priority>short</priority>
+<model><![CDATA[
+var Desktop integer >= 0;
+var Laptop integer  >= 0;
+var Server integer  >= 0;
+
+maximize Total_Cost: 3 * Desktop + 2 * Laptop + 8 * Server;
+
+subject to S1:                 100 * Laptop                <= 4000;
+subject to S2: 200 * Desktop + 100 * Laptop + 800 * Server <= 16000;
+subject to S3: 100 * Desktop                + 200 * Server <= 5000;
+subject to S4: Desktop >= 0;
+subject to S5: Laptop  >= 0;
+subject to S6: Server  >= 0;
+
+]]></model>
+
+<data>
+
+</data>
+
+<commands>
+solve;
+display Total_Cost;
+display Desktop;
+display Laptop;
+display Server;
+</commands>
+
+</factory>
