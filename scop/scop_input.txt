@@ -1,0 +1,80 @@
+variable A1 in { 0,1,2 } 
+ variable A2 in { 0,1,2 } 
+ variable A3 in { 0,1,2 } 
+ variable A4 in { 0,1,2 } 
+ variable A5 in { 0,1,2 } 
+ variable B1 in { 0,1,2 } 
+ variable B2 in { 0,1,2 } 
+ variable B3 in { 0,1,2 } 
+ variable B4 in { 0,1,2 } 
+ variable B5 in { 0,1,2 } 
+ variable C1 in { 0,1,2 } 
+ variable C2 in { 0,1,2 } 
+ variable C3 in { 0,1,2 } 
+ variable C4 in { 0,1,2 } 
+ variable C5 in { 0,1,2 } 
+ target = 0 
+ LB_A: weight= 1 type=linear 1(A1,1) 1(A1,2) 1(A2,1) 1(A2,2) 1(A3,1) 1(A3,2) 1(A4,1) 1(A4,2) 1(A5,1) 1(A5,2) >=3
+ LB_B: weight= 1 type=linear 1(B1,1) 1(B1,2) 1(B2,1) 1(B2,2) 1(B3,1) 1(B3,2) 1(B4,1) 1(B4,2) 1(B5,1) 1(B5,2) >=3
+ LB_C: weight= 1 type=linear 1(C1,1) 1(C1,2) 1(C2,1) 1(C2,2) 1(C3,1) 1(C3,2) 1(C4,1) 1(C4,2) 1(C5,1) 1(C5,2) >=3
+ UB_A: weight= 1 type=linear 1(A1,1) 1(A1,2) 1(A2,1) 1(A2,2) 1(A3,1) 1(A3,2) 1(A4,1) 1(A4,2) 1(A5,1) 1(A5,2) <=6
+ UB_B: weight= 1 type=linear 1(B1,1) 1(B1,2) 1(B2,1) 1(B2,2) 1(B3,1) 1(B3,2) 1(B4,1) 1(B4,2) 1(B5,1) 1(B5,2) <=6
+ UB_C: weight= 1 type=linear 1(C1,1) 1(C1,2) 1(C2,1) 1(C2,2) 1(C3,1) 1(C3,2) 1(C4,1) 1(C4,2) 1(C5,1) 1(C5,2) <=6
+ UB_night_A: weight= 1 type=linear 1(A1,2) 1(A2,2) 1(A3,2) 1(A4,2) 1(A5,2) <=4
+ UB_night_B: weight= 1 type=linear 1(B1,2) 1(B2,2) 1(B3,2) 1(B4,2) 1(B5,2) <=4
+ UB_night_C: weight= 1 type=linear 1(C1,2) 1(C2,2) 1(C3,2) 1(C4,2) 1(C5,2) <=4
+ UBshift_1_1: weight= 1 type=linear 1(A1,1) 1(B1,1) 1(C1,1) =1
+ UBshift_1_2: weight= 1 type=linear 1(A1,2) 1(B1,2) 1(C1,2) =1
+ UBshift_2_1: weight= 1 type=linear 1(A2,1) 1(B2,1) 1(C2,1) =1
+ UBshift_2_2: weight= 1 type=linear 1(A2,2) 1(B2,2) 1(C2,2) =1
+ UBshift_3_1: weight= 1 type=linear 1(A3,1) 1(B3,1) 1(C3,1) =1
+ UBshift_3_2: weight= 1 type=linear 1(A3,2) 1(B3,2) 1(C3,2) =1
+ UBshift_4_1: weight= 1 type=linear 1(A4,1) 1(B4,1) 1(C4,1) =1
+ UBshift_4_2: weight= 1 type=linear 1(A4,2) 1(B4,2) 1(C4,2) =1
+ UBshift_5_1: weight= 1 type=linear 1(A5,1) 1(B5,1) 1(C5,1) =1
+ UBshift_5_2: weight= 1 type=linear 1(A5,2) 1(B5,2) 1(C5,2) =1
+ Forbid_A_1_1: weight= 1 type=linear 1(A1,1) 1(A2,2) <=1
+ Forbid_A_1_2: weight= 1 type=linear 1(A1,2) 1(A2,1) <=1
+ Forbid_A_2_1: weight= 1 type=linear 1(A2,1) 1(A3,2) <=1
+ Forbid_A_2_2: weight= 1 type=linear 1(A2,2) 1(A3,1) <=1
+ Forbid_A_3_1: weight= 1 type=linear 1(A3,1) 1(A4,2) <=1
+ Forbid_A_3_2: weight= 1 type=linear 1(A3,2) 1(A4,1) <=1
+ Forbid_A_4_1: weight= 1 type=linear 1(A4,1) 1(A5,2) <=1
+ Forbid_A_4_2: weight= 1 type=linear 1(A4,2) 1(A5,1) <=1
+ Forbid_A_5_1: weight= 1 type=linear 1(A5,1) 1(A1,2) <=1
+ Forbid_A_5_2: weight= 1 type=linear 1(A5,2) 1(A1,1) <=1
+ Forbid_B_1_1: weight= 1 type=linear 1(B1,1) 1(B2,2) <=1
+ Forbid_B_1_2: weight= 1 type=linear 1(B1,2) 1(B2,1) <=1
+ Forbid_B_2_1: weight= 1 type=linear 1(B2,1) 1(B3,2) <=1
+ Forbid_B_2_2: weight= 1 type=linear 1(B2,2) 1(B3,1) <=1
+ Forbid_B_3_1: weight= 1 type=linear 1(B3,1) 1(B4,2) <=1
+ Forbid_B_3_2: weight= 1 type=linear 1(B3,2) 1(B4,1) <=1
+ Forbid_B_4_1: weight= 1 type=linear 1(B4,1) 1(B5,2) <=1
+ Forbid_B_4_2: weight= 1 type=linear 1(B4,2) 1(B5,1) <=1
+ Forbid_B_5_1: weight= 1 type=linear 1(B5,1) 1(B1,2) <=1
+ Forbid_B_5_2: weight= 1 type=linear 1(B5,2) 1(B1,1) <=1
+ Forbid_C_1_1: weight= 1 type=linear 1(C1,1) 1(C2,2) <=1
+ Forbid_C_1_2: weight= 1 type=linear 1(C1,2) 1(C2,1) <=1
+ Forbid_C_2_1: weight= 1 type=linear 1(C2,1) 1(C3,2) <=1
+ Forbid_C_2_2: weight= 1 type=linear 1(C2,2) 1(C3,1) <=1
+ Forbid_C_3_1: weight= 1 type=linear 1(C3,1) 1(C4,2) <=1
+ Forbid_C_3_2: weight= 1 type=linear 1(C3,2) 1(C4,1) <=1
+ Forbid_C_4_1: weight= 1 type=linear 1(C4,1) 1(C5,2) <=1
+ Forbid_C_4_2: weight= 1 type=linear 1(C4,2) 1(C5,1) <=1
+ Forbid_C_5_1: weight= 1 type=linear 1(C5,1) 1(C1,2) <=1
+ Forbid_C_5_2: weight= 1 type=linear 1(C5,2) 1(C1,1) <=1
+ Cons_A_1: weight= 1 type=linear -1(A1,2) 1(A5,2) 1(A2,2) >=0
+ Cons_A_2: weight= 1 type=linear -1(A2,2) 1(A1,2) 1(A3,2) >=0
+ Cons_A_3: weight= 1 type=linear -1(A3,2) 1(A2,2) 1(A4,2) >=0
+ Cons_A_4: weight= 1 type=linear -1(A4,2) 1(A3,2) 1(A5,2) >=0
+ Cons_A_5: weight= 1 type=linear -1(A5,2) 1(A4,2) 1(A1,2) >=0
+ Cons_B_1: weight= 1 type=linear -1(B1,2) 1(B5,2) 1(B2,2) >=0
+ Cons_B_2: weight= 1 type=linear -1(B2,2) 1(B1,2) 1(B3,2) >=0
+ Cons_B_3: weight= 1 type=linear -1(B3,2) 1(B2,2) 1(B4,2) >=0
+ Cons_B_4: weight= 1 type=linear -1(B4,2) 1(B3,2) 1(B5,2) >=0
+ Cons_B_5: weight= 1 type=linear -1(B5,2) 1(B4,2) 1(B1,2) >=0
+ Cons_C_1: weight= 1 type=linear -1(C1,2) 1(C5,2) 1(C2,2) >=0
+ Cons_C_2: weight= 1 type=linear -1(C2,2) 1(C1,2) 1(C3,2) >=0
+ Cons_C_3: weight= 1 type=linear -1(C3,2) 1(C2,2) 1(C4,2) >=0
+ Cons_C_4: weight= 1 type=linear -1(C4,2) 1(C3,2) 1(C5,2) >=0
+ Cons_C_5: weight= 1 type=linear -1(C5,2) 1(C4,2) 1(C1,2) >=0

@@ -1,0 +1,34 @@
+# reading data ... done: 0.00(s)
+penalty = 0/15 (hard/soft), time = 0.00(s), iteration = 0
+# improving the initial solution greedily
+penalty = 0/3 (hard/soft), time = 0.00(s), iteration = 0
+# start tabu search
+penalty = 0/2 (hard/soft), time = 0.00(s), iteration = 1
+penalty = 0/1 (hard/soft), time = 0.00(s), iteration = 8
+penalty = 0/0 (hard/soft), time = 0.00(s), iteration = 17
+
+
+# penalty = 0/0 (hard/soft)
+# cpu time = 0.00/0.00(s)
+# iteration = 17/17
+
+[best solution]
+A1: 2
+A2: 2
+A3: 0
+A4: 0
+A5: 2
+B1: 0
+B2: 1
+B3: 1
+B4: 1
+B5: 1
+C1: 1
+C2: 0
+C3: 2
+C4: 2
+C5: 0
+
+penalty: 0/0 (hard/soft)
+
+[Violated constraints]
